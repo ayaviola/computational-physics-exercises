@@ -26,4 +26,7 @@ import sympy as sp
 pF, m, e, phi = sp.symbols("pF, m, e, phi", positive=True)
 energy_eq = sp.Eq(pF**2/(2*m) -e*phi, 0)
 relation_eq = sp.solve(energy_eq, pF**2)[0] #--> dont want it to be a list
-print(f'Fermi Momentum:\npF**2 = {relation_eq}')
+
+if __name__ == "__main__":
+    print("This is part 1 of the Thomas-Fermi atom model problem.")
+    print(f"Fermi Momentum:\npF**2 = {relation_eq}")
