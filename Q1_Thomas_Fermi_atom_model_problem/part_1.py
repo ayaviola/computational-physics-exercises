@@ -23,7 +23,7 @@ import sympy as sp
 #Recall the wavefunction of an electron is a solution of schrodinger's equation. NOTE: the hamiltonian H only includes KE.
 #Recall conservation of total energy equation --> KE + UE = 0
 
-pF, m, e, phi = sp.symbols("pF, m, e, phi")
-energy_eq = sp.Eq(pF**2/2*m -e*phi, 0)
-relation_eq = sp.solve(energy_eq, pF**2)
+pF, m, e, phi = sp.symbols("pF, m, e, phi", positive=True)
+energy_eq = sp.Eq(pF**2/(2*m) -e*phi, 0)
+relation_eq = sp.solve(energy_eq, pF**2)[0] #--> dont want it to be a list
 print(f'Fermi Momentum:\npF**2 = {relation_eq}')
